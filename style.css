@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+::selection{
+    color: #fff;
+    background: #d2eb96
+}
+body{
+    background: #0BAAB3;
+}
+.select-box, .play-board, .result-box{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+.select-box{
+    background: #610601;
+    padding: 80px 75px 75px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%
+}
+.select-box.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+.select-box header{
+    font-size: 50px;
+    font-weight: 700;
+    color: #d2eb96;
+    padding-bottom: 10px;
+    border-bottom: 8px solid #0BAAB3
+}
+.select-box .title{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px 0;
+    color: #d2eb96;
+}
+.select-box.options{
+    display: flex;
+    width: 100%
+}
+.options button{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 0;
+    border: #1ee3c9;
+    background: darkturquoise;
+    border-radius: 80px;
+    color: #d2eb96;
+    outline:auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.options button:hover,
+.btn button:hover{
+    transform: scale(0.96);
+}
+.options button.playerX{
+    margin-right: 5px;
+}
+.options button.playerO{
+    margin-left: 2px;
+    margin-top: 10px;
+}
+.select-box .credit{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;   
+    color: #d2eb96;
+}
+.select-box .credit a{
+    color:#d2eb96;
+    text-decoration: none;
+}
+.select-box .credit a:hover{
+    text-decoration: underline;
+}
+
+.play-board{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play-board.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.play-board .details{
+    padding: 20px;
+    border-radius: 80px;
+    background: #610601;
+    outline: auto;
+}
+.play-board .players{
+    width: 100%;
+    display:flex;
+    position: relative;
+    justify-content: space-between;
+}
+.players span{
+    position: relative;
+    z-index: 2;
+    color: #0baab3;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    transition: all 0.3 ease;
+}
+.players.active span:first-child{
+    color: #d2eb96;    
+}
+.players.active span:last-child{
+    color: #1ee3c9;
+}
+.players span:first-child{
+    color: #d2eb96;
+}
+.players slider{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #1ee3c9;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.players.active .slider{
+    left: 50%;
+}
+.players.active span:first-child{
+    color: #0BAAB3;
+}
+.players.active span:nth-child(2){
+    color: #d2eb96;
+}
+.players.active .slider{
+    left: 50%;
+}
+.play-area{
+    margin-top: 20px;
+}
+.play-area section{
+    display: flex;
+    margin-bottom: 1px;
+}
+.play-area section span{
+    display: block;
+    height: 90px;
+    width: 90px;
+    margin: 2px;
+    color: #0BAAB3;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+}
+.result-box{
+    padding: 45px 30px;
+    border-radius: 80px;
+    max-width: 500px;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    background: #610601;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.result-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    outline: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+.result-box .won-text{
+    font-size: 40px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    color: #d2eb96;
+}
+.result-box .won-text p{
+    font-weight: 600;
+    margin: 0 5px;
+}
+.result-box .btn{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.btn button{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: auto;
+    background: #1ee3c9;
+    border-radius: 60px;
+    color:#d2eb96;
+    outline: none;
+    cursor: pointer;
+    outline: auto;
+    transition: all 0.3s ease;
+}
